@@ -121,7 +121,7 @@ if __name__ == "__main__":
     i=0
     start = time.time()
     df1 = pd.read_csv(
-        '/data/dadwal/watermarkingTraj/data/All_results/'+config['global']['technique']+'/256_len/watermark_corrWithDistance_finalused.csv',header=None)
+        '/data/watermarkingTraj/data/All_results/'+config['global']['technique']+'/256_len/watermark_corrWithDistance_finalused.csv',header=None)
     df1.columns=['trip_id','mean_dist','min_dist','max_dist','watermark_corr']
     trip_idSeries = df1['trip_id'].values
     for trip_id in trip_idSeries:
