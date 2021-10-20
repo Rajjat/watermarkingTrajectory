@@ -112,17 +112,17 @@ if __name__ == "__main__":
     # read config to know path to store log file
     config.read(args.configfile)
 
-    watermark = np.load('/data/dadwal/watermarkingTraj/data/All_results/SVD/watermark.npy', allow_pickle=True)
+    watermark = np.load('/data/watermarkingTraj/data/All_results/SVD/watermark.npy', allow_pickle=True)
     #print(watermark)
     watermark=watermark.flatten()
     d = float(config['global']['d'])
     noises=['interpolate']
     for noise in noises:
-        directory = os.path.join("/data/dadwal/watermarkingTraj/data/All_results/SVD/portodata/noise_traj/"+noise+"/")
+        directory = os.path.join("/data/watermarkingTraj/data/All_results/SVD/portodata/noise_traj/"+noise+"/")
         df_concat1=pd.DataFrame(columns=['traj_id','Noise','corr_value'])
         for root,dirs,files in os.walk(directory):
             for file1 in files:                
-                df_2=pd.read_csv("/data/dadwal/watermarkingTraj/data/All_results/SVD/portodata/noise_traj/"+noise+"/"+file1,header=0)
+                df_2=pd.read_csv("/data/watermarkingTraj/data/All_results/SVD/portodata/noise_traj/"+noise+"/"+file1,header=0)
                 df_noise=pd.DataFrame(columns=['traj_id','Noise','corr_value'])
                 file_split=re.split("\.",file1)
                 trip_id=file_split[0]
