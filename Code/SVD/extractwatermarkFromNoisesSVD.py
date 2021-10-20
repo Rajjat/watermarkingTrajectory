@@ -155,19 +155,19 @@ if __name__ == "__main__":
     config.read(args.configfile)
     start = time.time()
 
-    watermark = np.load('/data/dadwal/watermarkingTraj/data/All_results/SVD/watermark.npy', allow_pickle=True)
+    watermark = np.load('/data/watermarkingTraj/data/All_results/SVD/watermark.npy', allow_pickle=True)
     watermark=watermark.flatten()
     d = float(config['global']['d'])
 
     noises=['remove_random_points_with_path','add_outliers_with_signal_to_noise_ratio','add_signal_noise',
-        'add_white_noise','replace_non_skeleton_points_with_path','replace_non_skeleton_points_with_start_point',
+        'add_white_noise','replace_non_skeleton_points_with_path',
         'remove_random_points','hybrid','cropfromlast','double_embed','interpolate']
     for noise in noises:
-        directory = os.path.join("/data/dadwal/watermarkingTraj/data/All_results/SVD/our_data/noise_traj/"+noise+"/")
+        directory = os.path.join("/data/watermarkingTraj/data/All_results/SVD/our_data/noise_traj/"+noise+"/")
         df_concat1=pd.DataFrame(columns=['traj_id','Noise','corr_value'])
         for root,dirs,files in os.walk(directory):
             for file1 in files:                
-                df=pd.read_csv("/data/dadwal/watermarkingTraj/data/All_results/SVD/our_data/noise_traj/"+noise+"/"+file1,header=0)
+                df=pd.read_csv("/data/watermarkingTraj/data/All_results/SVD/our_data/noise_traj/"+noise+"/"+file1,header=0)
                 df_noise=pd.DataFrame(columns=['traj_id','Noise','corr_value'])
                 file_split=re.split("\.",file1)
                 trip_id=file_split[0]
