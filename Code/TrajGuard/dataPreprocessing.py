@@ -22,7 +22,6 @@ def norm_data(data):
     """
     mean_data=np.mean(data)
     std_data=np.std(data, ddof=1)
-    #return (data-mean_data)/(std_data*np.sqrt(data.size-1))dadwal
     return (data-mean_data)/(std_data)
 
 
