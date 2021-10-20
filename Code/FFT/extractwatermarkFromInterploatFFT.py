@@ -120,7 +120,7 @@ if __name__ == "__main__":
     start = time.time()
     lp=int(config['global']['slice']) 
     df1 = pd.read_csv(
-        '/data/dadwal/watermarkingTraj/data/All_results/FFT_complexNum/256_len/'+config['global']['slicenumber']+'/watermark_corrWithDistance.csv',header=None)
+        '/data/watermarkingTraj/data/All_results/FFT_complexNum/256_len/'+config['global']['slicenumber']+'/watermark_corrWithDistance.csv',header=None)
     df1.columns=['trip_id','mean_dist','min_dist','max_dist','watermark_corr']
     trip_idSeries = df1['trip_id'].values
     df_concat1 = pd.DataFrame(columns=['traj_id', 'Noise', 'corr_value'])
@@ -174,7 +174,7 @@ if __name__ == "__main__":
         t2=pd.concat([t1, noised_matched], axis=1)
         
         for i in range(16):
-                       watermark=np.load("/data/dadwal/watermarkingTraj/data/All_results/FFT_complexNum/256_len/"+config['global']['slicenumber']+"/payload_strength/different_watermarks/payload_15/watermark_15.npy",allow_pickle=True) 
+                       watermark=np.load("/data/watermarkingTraj/data/All_results/FFT_complexNum/256_len/"+config['global']['slicenumber']+"/payload_strength/different_watermarks/payload_15/watermark_15.npy",allow_pickle=True) 
 
             watermark=watermark[0:16] ###########################remove it when use 32
             watermark_256.append(watermark)
