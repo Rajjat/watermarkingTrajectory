@@ -51,7 +51,7 @@ def double_emded(trace):
 
 def haversine(lon1, lat1, lon2, lat2):
     """
-    Calculate the great circle distance between two points
+    Calcuate the great circle distance between two points
     on the earth (specified in decimal degrees)
     """
     # convert decimal degrees to radians
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     i=0
     start = time.time()
     df1 = pd.read_csv(
-        '/data/dadwal/watermarkingTraj/data/All_results/'+config['global']['technique']+'/256_len/'+config['global']['slicenumber']+'/watermark_corrWithDistance.csv',header=None)
+        '/data/watermarkingTraj/data/All_results/'+config['global']['technique']+'/256_len/'+config['global']['slicenumber']+'/watermark_corrWithDistance.csv',header=None)
     df1.columns=['trip_id','mean_dist','min_dist','max_dist','watermark_corr']
     trip_idSeries = df1['trip_id'].values
     for trip_id in trip_idSeries:
