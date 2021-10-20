@@ -221,10 +221,10 @@ if __name__ == "__main__":
     i=0
     start = time.time()
     noise='hybrid'
-    directory = os.path.join("/data/dadwal/watermarkingTraj/data/All_results/SVD/our_data/noise_traj/cropfromlast/")
+    directory = os.path.join("/data/watermarkingTraj/data/All_results/SVD/our_data/noise_traj/cropfromlast/")
     for root,dirs,files in os.walk(directory):
         for file in files:
-            df=pd.read_csv("/data/dadwal/watermarkingTraj/data/All_results/SVD/our_data/noise_traj/cropfromlast/"+file,header=0)
+            df=pd.read_csv("/data/watermarkingTraj/data/All_results/SVD/our_data/noise_traj/cropfromlast/"+file,header=0)
              data_three = df[['watermarked_lat', 'watermarked_long','cum_sum','latitude','longitude']]
             trip_id=df.traj_id.values[0]
             noisy_trace = add_white_noise(data_three.values)
