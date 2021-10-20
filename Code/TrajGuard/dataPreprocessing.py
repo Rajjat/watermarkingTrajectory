@@ -22,7 +22,7 @@ def norm_data(data):
     """
     mean_data=np.mean(data)
     std_data=np.std(data, ddof=1)
-    #return (data-mean_data)/(std_data*np.sqrt(data.size-1))
+    #return (data-mean_data)/(std_data*np.sqrt(data.size-1))dadwal
     return (data-mean_data)/(std_data)
 
 
@@ -167,7 +167,6 @@ if __name__ == "__main__":
     trip_idSeries = filterdata['trip_id'].unique()
     i=0
     for trip_id in trip_idSeries:
-        #print(trip_id)dadwal
         df_1=filterdata.loc[filterdata['trip_id']==trip_id]
         df_1 = df_1.reset_index(drop=True)
         df_2=df_1.head(256)
