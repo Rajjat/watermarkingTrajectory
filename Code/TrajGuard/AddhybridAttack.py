@@ -148,19 +148,6 @@ def remove_random_points_with_path(trace, removal_percentage=.01):
     return noisy_trace
 
 
-def replace_non_skeleton_points_with_start_point(trace, epsilon=.00001):
-    import rdp
-    trace=trace[:,0:2]
-    #noisy_trace = trace.copy()
-    noisy_trace = trace.copy()
-
-    mask = rdp.rdp(trace, epsilon, return_mask=True)
-
-    for i, keep in enumerate(mask):
-        if not keep:
-            noisy_trace[i] = noisy_trace[i - 1]
-    return noisy_trace
-
 
 def replace_non_skeleton_points_with_path(trace, epsilon=.00005):
     import rdp
@@ -219,10 +206,10 @@ if __name__ == "__main__":
     i=0
     start = time.time()
     noise='hybrid'
-    directory = os.path.join("/data/dadwal/watermarkingTraj/data/All_results/TrajGuard/our_data/noise_traj/cropfromlast/")
+    directory = os.path.join("/data/watermarkingTraj/data/All_results/TrajGuard/our_data/noise_traj/cropfromlast/")
     for root,dirs,files in os.walk(directory):
         for file in files:
-            df=pd.read_csv("/data/dadwal/watermarkingTraj/data/All_results/TrajGuard/our_data/noise_traj/cropfromlast/"+file,header=None)
+            df=pd.read_csv("/data/watermarkingTraj/data/All_results/TrajGuard/our_data/noise_traj/cropfromlast/"+file,header=None)
             df.columns = ['trip_id','time','watermarked_lat', 'watermarked_long']
             df=df[['watermarked_lat', 'watermarked_long','trip_id','time']]
             trip_id=df.trip_id.values[0]
