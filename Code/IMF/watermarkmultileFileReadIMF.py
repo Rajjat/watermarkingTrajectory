@@ -17,9 +17,7 @@ from numpy import diag
 from numpy import zeros
 import os
 
-#from scipy import stats
-#https://machinelearningmastery.com/singular-value-decomposition-for-machine-learning/
-#delta = 0.0009
+
 
 def norm_data(data):
     """
@@ -226,7 +224,7 @@ if __name__ == "__main__":
     filterdata = df.groupby("trip_id").filter(lambda x: len(x) > 256)
     filterdata = filterdata.reset_index(drop=True)
     trip_idSeries = filterdata['trip_id'].unique()
-    watermark=np.load("/data/dadwal/watermarkingTraj/data/All_results/IMF/256_len//watermark_random_sumZero_256.npy",allow_pickle=True)
+    watermark=np.load("/data/watermarkingTraj/data/All_results/IMF/256_len//watermark_random_sumZero_256.npy",allow_pickle=True)
     matrix_size = int(config['global']['matrix_size'])
     watermark1 = np.reshape(watermark, (-1, matrix_size))
     i=0
