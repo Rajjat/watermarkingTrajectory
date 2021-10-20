@@ -128,10 +128,10 @@ if __name__ == "__main__":
     i=0
     start = time.time()
     noises=['double_embed']
-    directory = os.path.join("/data/dadwal/watermarkingTraj/data/All_results/SVD/our_data/watermarked_data/")
+    directory = os.path.join("/data/watermarkingTraj/data/All_results/SVD/our_data/watermarked_data/")
     for root,dirs,files in os.walk(directory):
         for file in files:
-            df=pd.read_csv("/data/dadwal/watermarkingTraj/data/All_results/SVD/our_data/watermarked_data/"+file,header=0)
+            df=pd.read_csv("/data/watermarkingTraj/data/All_results/SVD/our_data/watermarked_data/"+file,header=0)
             trip_id=df.traj_id.values[0]
             for noise in noises:
                 noisy_trace = locals()[noise](df)
