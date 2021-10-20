@@ -23,7 +23,7 @@ def double_embed(df_2):
     delta=0.000001
     new_SV = []
     added_watermark_bit=[]
-    watermark = np.load('/data/dadwal/watermarkingTraj/data/All_results/SVD/watermark_double_embed.npy', allow_pickle=True)
+    watermark = np.load('/data/watermarkingTraj/data/All_results/SVD/watermark_double_embed.npy', allow_pickle=True)
     s_w = df_2[["latitude","longitude"]].values
     for i in range(0, 128):  # P=16, n=32
         lat2d = s_w[2 * i:(2 * i) + 2].copy() #for 256
