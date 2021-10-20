@@ -167,12 +167,12 @@ if __name__ == "__main__":
     trip_idSeries = filterdata['trip_id'].unique()
     i=0
     for trip_id in trip_idSeries:
-        #print(trip_id)
+        #print(trip_id)dadwal
         df_1=filterdata.loc[filterdata['trip_id']==trip_id]
         df_1 = df_1.reset_index(drop=True)
         df_2=df_1.head(256)
         df_2=df_2[['trip_id','capture_time','latitude','longitude']]
-        df_2.to_csv("/data/dadwal/watermarkingTraj/data/All_results/TrajGuard/our_data/"+trip_id+".csv",index=False,header=False)
+        df_2.to_csv("/data/watermarkingTraj/data/All_results/TrajGuard/our_data/"+trip_id+".csv",index=False,header=False)
 
         
 
