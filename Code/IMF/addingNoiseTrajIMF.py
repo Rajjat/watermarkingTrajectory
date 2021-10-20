@@ -141,18 +141,6 @@ def remove_random_points_with_path(trace, removal_percentage=.01): #1
     return noisy_trace
 
 
-def replace_non_skeleton_points_with_start_point(trace, epsilon=.00001):
-    import rdp
-    trace=trace[:,0:3]
-    noisy_trace = trace.copy()
-
-    mask = rdp.rdp(trace, epsilon, return_mask=True)
-
-    for i, keep in enumerate(mask):
-        if not keep:
-            noisy_trace[i] = noisy_trace[i - 1]
-    return noisy_trace
-
 
 def replace_non_skeleton_points_with_path(trace, epsilon=.00001):
     import rdp
@@ -247,14 +235,14 @@ if __name__ == "__main__":
     i=0
     start = time.time()
     df1 = pd.read_csv(
-        '/data/dadwal/watermarkingTraj/data/All_results/'+config['global']['technique']+'/256_len/watermark_corrWithDistance.csv',header=None)
+        '/data/watermarkingTraj/data/All_results/'+config['global']['technique']+'/256_len/watermark_corrWithDistance.csv',header=None)
     df1.columns=['trip_id','mean_dist','min_dist','max_dist','watermark_corr']
     trip_idSeries = df1['trip_id'].values
     for trip_id in trip_idSeries:
         data=pd.read_csv('../'+config['global']['global_fol']+config['global']['technique']+'/256_len/'+trip_id+'/watermarking/watermarkedTraj.csv')
         data_three = data[['longitude', 'watermarked_latitude','cum_sum','latitude']]
 
-        noises=['remove_random_points_with_path','remove_random_points','add_outliers_with_signal_to_noise_ratio','add_signal_noise','add_white_noise','replace_non_skeleton_points_with_path','replace_non_skeleton_points_with_start_point']
+        noises=['remove_random_points_with_path','remove_random_points','add_outliers_with_signal_to_noise_ratio','add_signal_noise','add_white_noise','replace_non_skeleton_points_with_path']
          for noise in noises:
             noisy_trace = locals()[noise](data_three.values)
             df_noisy = pd.DataFrame(noisy_trace)
