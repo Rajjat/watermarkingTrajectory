@@ -105,12 +105,12 @@ if __name__ == "__main__":
 
     lp=int(config['global']['slice']) 
     df1 = pd.read_csv(
-        '/data/dadwal/watermarkingTraj/data/All_results/'+config['global']['technique']+'/256_len/'+config['global']['slicenumber']+'/watermark_corrWithDistance.csv',header=None)    
+        '/data/watermarkingTraj/data/All_results/'+config['global']['technique']+'/256_len/'+config['global']['slicenumber']+'/watermark_corrWithDistance.csv',header=None)    
     print(df1)
     df1.columns=['trip_id','mean_dist','min_dist','max_dist','watermark_corr']
     trip_idSeries = df1['trip_id'].values
     noises=['remove_random_points_with_path','add_outliers_with_signal_to_noise_ratio','add_signal_noise',
-       'add_white_noise','replace_non_skeleton_points_with_path','replace_non_skeleton_points_with_start_point',
+       'add_white_noise','replace_non_skeleton_points_with_path',
        'remove_random_points','hybrid','double_emded','cropfromlast']
     df_concat1=pd.DataFrame(columns=['traj_id','Noise','corr_value','avg','min','max'])
     for trip_id in trip_idSeries:
@@ -123,7 +123,7 @@ if __name__ == "__main__":
             df_2 = pd.read_csv('../'+config['global']['global_fol']+config['global']['technique']+'/256_len/'+config['global']['slicenumber']+'/payload_strength/different_watermarks/payload_5/watermarked_data/'+trip_id+'/noise_added/'+noise+'.csv')
 
             for i in range(16): 
-                watermark=np.load("/data/dadwal/watermarkingTraj/data/All_results/FFT_complexNum/256_len/"+config['global']['slicenumber']+"/payload_strength/different_watermarks/payload_5/watermark_5.npy",allow_pickle=True) 
+                watermark=np.load("/data/watermarkingTraj/data/All_results/FFT_complexNum/256_len/"+config['global']['slicenumber']+"/payload_strength/different_watermarks/payload_5/watermark_5.npy",allow_pickle=True) 
                 watermark=watermark[0:16]
                 watermark_256.append(watermark)
                 df_3=df_2[lp*i:lp*i+lp]
