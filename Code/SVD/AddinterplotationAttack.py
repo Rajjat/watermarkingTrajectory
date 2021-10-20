@@ -70,10 +70,10 @@ if __name__ == "__main__":
     start = time.time()
 
     noises=['interpolate']
-    directory = os.path.join("/data/dadwal/watermarkingTraj/data/All_results/SVD/our_data/watermarked_data/")
+    directory = os.path.join("/data/watermarkingTraj/data/All_results/SVD/our_data/watermarked_data/")
     for root,dirs,files in os.walk(directory):
         for file in files:
-            df=pd.read_csv("/data/dadwal/watermarkingTraj/data/All_results/SVD/our_data/watermarked_data/"+file,header=0)
+            df=pd.read_csv("/data/watermarkingTraj/data/All_results/SVD/our_data/watermarked_data/"+file,header=0)
             df=df[['traj_id','time','latitude','longitude','time_diff','cum_sum','watermarked_lat','watermarked_long']]
             trip_id=df.traj_id.values[0]
             for noise in noises:
