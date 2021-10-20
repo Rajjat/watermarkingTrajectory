@@ -183,7 +183,7 @@ if __name__ == "__main__":
     filterdata = filterdata.reset_index(drop=True)
     trip_idSeries = filterdata['trip_id'].unique()
     #watermark = getwatermark()
-    #np.save("/data/dadwal/watermarkingTraj/data/All_results/FFT_complexNum/watermark_random.npy",watermark)
+    #np.save("/data/watermarkingTraj/data/All_results/FFT_complexNum/watermark_random.npy",watermark)
     lp=int(config['global']['slice'])     i=0
     for trip_id in trip_idSeries:
         df_1=filterdata.loc[filterdata['trip_id']==trip_id]
@@ -201,7 +201,7 @@ if __name__ == "__main__":
         extracted_watermark_256=[]
         if max1<=200:
             for i in range(16):
-                watermark=np.load("/data/dadwal/watermarkingTraj/data/All_results/FFT_complexNum/256_len/"+config['global']['slicenumber']+"/payload_strength/different_watermarks/payload_5/watermark_5.npy",allow_pickle=True)                
+                watermark=np.load("/data/watermarkingTraj/data/All_results/FFT_complexNum/256_len/"+config['global']['slicenumber']+"/payload_strength/different_watermarks/payload_5/watermark_5.npy",allow_pickle=True)                
                 watermark=watermark[0:16]
                 watermark_256.append(watermark)
                 df_3=df_2[lp*i:lp*i+lp]
