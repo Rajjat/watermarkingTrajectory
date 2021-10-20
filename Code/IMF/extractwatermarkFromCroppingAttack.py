@@ -14,9 +14,7 @@ import math
 import seaborn as sns
 from scipy.fft import fft, ifft
 from math import radians, cos, sin, asin, sqrt
-#from scipy import stats
-#https://machinelearningmastery.com/singular-value-decomposition-for-machine-learning/
-#delta = 0.0009
+
 
 
 def haversine_np(lon1, lat1, lon2, lat2):
@@ -178,12 +176,12 @@ if __name__ == "__main__":
     start = time.time()
 
     df1 = pd.read_csv(
-        '/data/dadwal/watermarkingTraj/data/All_results/IMF/256_len/watermark_corrWithDistance_finalused.csv',header=None)
+        '/data/watermarkingTraj/data/All_results/IMF/256_len/watermark_corrWithDistance_finalused.csv',header=None)
     df1.columns=['trip_id','mean_dist','min_dist','max_dist','watermark_corr']
     trip_idSeries = df1['trip_id'].values
 
     i=0
-    watermark=np.load("/data/dadwal/watermarkingTraj/data/All_results/IMF/256_len//watermark_random_sumZero_256.npy",allow_pickle=True)
+    watermark=np.load("/data/watermarkingTraj/data/All_results/IMF/256_len//watermark_random_sumZero_256.npy",allow_pickle=True)
     matrix_size = int(config['global']['matrix_size'])
     watermark1 = np.reshape(watermark, (-1, matrix_size))
     df_concat1 = pd.DataFrame(columns=['traj_id', 'Noise', 'corr_value'])
