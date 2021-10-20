@@ -67,10 +67,10 @@ if __name__ == "__main__":
     start = time.time()
 
     noises=['interpolate']
-    directory = os.path.join("/data/dadwal/watermarkingTraj/data/All_results/TrajGuard/our_data/our_data_watermarked_trajGuard_withmorebits/")
+    directory = os.path.join("/data/watermarkingTraj/data/All_results/TrajGuard/our_data/our_data_watermarked_trajGuard_withmorebits/")
     for root,dirs,files in os.walk(directory):
         for file in files:
-            df=pd.read_csv("/data/dadwal/watermarkingTraj/data/All_results/TrajGuard/our_data/our_data_watermarked_trajGuard_withmorebits/"+file,header=None)
+            df=pd.read_csv("/data/watermarkingTraj/data/All_results/TrajGuard/our_data/our_data_watermarked_trajGuard_withmorebits/"+file,header=None)
             df.columns = ['trip_id','time','watermarked_lat', 'watermarked_long']
             df=df[['watermarked_lat', 'watermarked_long','trip_id','time']]
             trip_id=df.trip_id.values[0]
