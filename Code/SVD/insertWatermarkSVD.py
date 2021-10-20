@@ -179,14 +179,14 @@ if __name__ == "__main__":
     #print(config['global']['data'])
     start = time.time()
 
-    directory = os.path.join("/data/dadwal/watermarkingTraj/data/All_results/TrajGuard/our_data/data/")
-    watermark = np.load('/data/dadwal/watermarkingTraj/data/All_results/SVD/watermark.npy', allow_pickle=True)
+    directory = os.path.join("/data/watermarkingTraj/data/All_results/TrajGuard/our_data/data/")
+    watermark = np.load('/data/watermarkingTraj/data/All_results/SVD/watermark.npy', allow_pickle=True)
     watermark=watermark.flatten()
     d = float(config['global']['d'])
     i=0
     for root,dirs,files in os.walk(directory):
         for file in files:
-            df=pd.read_csv("/data/dadwal/watermarkingTraj/data/All_results/TrajGuard/our_data/data/"+file,header=None)
+            df=pd.read_csv("/data/watermarkingTraj/data/All_results/TrajGuard/our_data/data/"+file,header=None)
             df.columns=['traj_id','time','latitude','longitude']
             
             trip_id=re.split("\.",file)[0]
