@@ -222,10 +222,10 @@ if __name__ == "__main__":
     start = time.time()   
 
     noises=['remove_random_points_with_path','add_outliers_with_signal_to_noise_ratio','add_signal_noise','add_white_noise','replace_non_skeleton_points_with_path','replace_non_skeleton_points_with_start_point','remove_random_points']
-    directory = os.path.join("/data/dadwal/watermarkingTraj/data/All_results/TrajGuard/our_data/our_data_watermarked_trajGuard_withmorebits/")
+    directory = os.path.join("/data/watermarkingTraj/data/All_results/TrajGuard/our_data/our_data_watermarked_trajGuard_withmorebits/")
     for root,dirs,files in os.walk(directory):
         for file in files:
-            df=pd.read_csv("/data/dadwal/watermarkingTraj/data/All_results/TrajGuard/our_data/our_data_watermarked_trajGuard_withmorebits/"+file,header=None)
+            df=pd.read_csv("/data/watermarkingTraj/data/All_results/TrajGuard/our_data/our_data_watermarked_trajGuard_withmorebits/"+file,header=None)
             df.columns = ['trip_id','time','watermarked_lat', 'watermarked_long']
             df=df[['watermarked_lat', 'watermarked_long','trip_id','time']]
             trip_id=df.trip_id.values[0]
