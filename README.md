@@ -16,4 +16,3 @@ c) Extracting Noise from Noise data: extractWatermarkFromNoises.py, extractwater
   
  **Tools:-**  
    * Python(3.7) 
- 
