@@ -1,7 +1,7 @@
 **Robust and Effective Watermarking for GPS Trajectories**  
  
 
-The repository contains one folder named Code which consits of four different algorithm 
+Four different implementation of the watermarking algorithm is present in the folder 'Code': 
 1. W-Trace 
 2. TrajGuard 
 3. IMF
