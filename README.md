@@ -8,9 +8,9 @@ Four different implementation of the watermarking algorithm is present in the fo
 4. SVD
 
 Each method consists of differnt python files for :
-a) Watermark insertion- watermarkInsertion.py
-b) Adding noise to the trajeactory data: AddotherNoises.py, AddhybridAttack.py, AddinterplotationAttackFFT.py,  AdddoublEmbeddingAttack.py, AddinterplotationAttackFFT.py, 
-c) Extracting Noise from Noise data: extractWatermarkFromNoises.py, extractwatermarkFromInterpolate.py
+a) Watermark insertion- watermarkInsertion.py  
+b) Adding noise to the trajeactory data: AddotherNoises.py, AddhybridAttack.py, AddinterplotationAttackFFT.py,  AdddoublEmbeddingAttack.py, AddinterplotationAttackFFT.py  
+c) Extracting Noise from Noise data: extractWatermarkFromNoises.py, extractwatermarkFromInterpolate.py  
  
    
   
