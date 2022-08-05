@@ -15,8 +15,8 @@ c) Extracting Noise from Noise data: extractWatermarkFromNoises.py, extractwater
  **Tools:-**  
    * Python(3.7) 
 
-![alt text](https://github.com/Rajjat/watermarkingTrajectory/blob/master/watermark_img.png)
-Here, we show the visualisation of original, watermarked and noised trajectory. 
-Green line: Original Trajectory
-Purple line: Watermarked Trajectory
-Yellow line: Noised Trajectory
+![alt text](https://github.com/Rajjat/watermarkingTrajectory/blob/master/watermark_img.png)  
+Here, we show the visualisation of original, watermarked and noised trajectory.  
+Green line: Original Trajectory  
+Purple line: Watermarked Trajectory  
+Yellow line: Noised Trajectory  
