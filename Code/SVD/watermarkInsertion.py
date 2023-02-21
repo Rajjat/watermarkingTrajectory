@@ -14,7 +14,7 @@ from scipy.linalg import svd
 import math
 import re
 #from scipy import stats
-#https://machinelearningmastery.com/singular-value-decomposition-for-machine-learning/
+
 #delta = 0.0009
 def norm_data(data):
     """
