@@ -13,7 +13,7 @@ from scipy.fft import fft, ifft
 from math import radians, cos, sin, asin, sqrt
 from random import choices
 #from scipy import stats
-#https://machinelearningmastery.com/singular-value-decomposition-for-machine-learning/
+
 #delta = 0.0009
 
 
