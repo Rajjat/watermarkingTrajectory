@@ -168,7 +168,6 @@ def replace_non_skeleton_points_with_path(trace, epsilon=.00001):
 
 
 # helper function for resampling
-# based on https://stackoverflow.com/questions/14313510/how-to-calculate-moving-average-using-numpy/54628145
 def moving_average(a, n=3):
     ret = np.cumsum(a, axis=0, dtype=float)
     ret[n:] = ret[n:] - ret[:-n]
