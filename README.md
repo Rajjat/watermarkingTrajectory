@@ -11,6 +11,7 @@ Each method consists of different python files for :
 a) Watermark insertion- watermarkInsertion.py  
 b) Adding noise to the trajectory data: AddotherNoises.py, AddhybridAttack.py, AddinterplotationAttackFFT.py,  AdddoublEmbeddingAttack.py, AddinterplotationAttackFFT.py  
 c) Extracting Noise from Noise data: extractWatermarkFromNoises.py, extractwatermarkFromInterpolate.py  
+d) For utility application, refer to <a href="https://github.com/sobhan-moosavi/DCRNN"> DCRNN code </a> 
    
  **Tools:-**  
    * Python(3.7) 
