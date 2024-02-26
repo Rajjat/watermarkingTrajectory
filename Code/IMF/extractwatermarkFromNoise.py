@@ -1,6 +1,5 @@
 from PyEMD import EMD
 import pandas as pd
-import pylab as plt
 from numpy import diag
 from numpy import zeros
 import os
