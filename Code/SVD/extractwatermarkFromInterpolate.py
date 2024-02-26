@@ -1,6 +1,5 @@
 
 import pandas as pd
-import pylab as plt
 from numpy import diag
 from numpy import zeros
 import os
@@ -15,8 +14,7 @@ from scipy.fft import fft, ifft
 from math import radians, cos, sin, asin, sqrt
 import re
 from scipy.linalg import svd
-#from scipy import stats
-#delta = 0.0009
+
 
 
 def haversine_np(lon1, lat1, lon2, lat2):
