@@ -2,7 +2,6 @@
 import time
 import numpy  as np
 import pandas as pd
-import pylab as plt
 from numpy import diag
 from numpy import zeros
 import os
