@@ -12,7 +12,6 @@ from scipy.fft import fft, ifft
 from math import radians, cos, sin, asin, sqrt
 from random import choices
 from PyEMD import EMD
-import pylab as plt
 from numpy import diag
 from numpy import zeros
 import os
