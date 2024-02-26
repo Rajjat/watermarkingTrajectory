@@ -1,6 +1,4 @@
-
 import pandas as pd
-
 import os
 import argparse
 import configparser
@@ -12,8 +10,8 @@ import seaborn as sns
 from scipy.fft import fft, ifft
 from math import radians, cos, sin, asin, sqrt
 from random import choices
-#from scipy import stats
-#delta = 0.0009
+
+
 
 def norm_data(data):
     """
